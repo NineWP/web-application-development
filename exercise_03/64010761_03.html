@@ -8,12 +8,11 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Anton&family=Caveat&family=Damion&family=Dancing+Script:wght@700&family=Kanit:wght@100&family=Montserrat:wght@600&family=Poppins:wght@400;500;600&display=swap');
-        @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@600&display=swap');
+        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Dancing+Script:wght@700&family=Montserrat:wght@600&display=swap');
 
         * {
-            font-size: 20px;
-            font-family: 'Montserrat', sans-serif;
+            font-size: 24px;
+            font-family: 'Cormorant Garamond', serif;
             scroll-behavior: smooth;
         }
 
@@ -118,7 +117,7 @@
         }
 
         .story-box {
-            margin-top: 3rem;
+            margin-top: 1rem;
         }
 
         #service-box::after {
@@ -143,6 +142,20 @@
         }
 
         /*about us section */
+        #about .about {
+            display: flex;
+            flex-direction: row;
+            text-align: center;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 100px 20px;
+        }
+
+        #about .col-left {
+            width: 360px;
+            height: 480px;
+        }
+
         #about .col-left .about-img {
             height: 100%;
             width: 100%;
@@ -153,19 +166,49 @@
         #about .col-left .about-img::after {
             content: '';
             position: absolute;
-            left: -33px;
-            top: 19px;
-            height: 100%;
-            width: 100%;
+            left: -35px;
+            top: 34px;
+            height: 98%;
+            width: 98%;
             border: 7px solid crimson;
             z-index: -1;
         }
 
+        #about .col-right {
+            width: 80%;
+            text-align: left;
+            padding: 30px;
+        }
+
+        #about .col-right h2 {
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: .2rem;
+            margin-bottom: 10px;
+        }
+
+        #about .col-right p {
+            margin-bottom: 20px;
+        }
+
+        #about .col-right a {
+            color: black;
+            margin-bottom: 50px;
+            transition: .3s ease;
+        }
+
+        #about .col-right a:hover {
+            color: white;
+            background-color: crimson;
+            transform: scale(1.1);
+        }
+
+
         /* for tablet*/
-        @media only screen and (max-width:805px) {
+        @media only screen and (max-width:820px) {
 
             * {
-                font-size: 14px;
+                font-size: 18px;
             }
 
             .hero div {
@@ -233,7 +276,7 @@
     <section id="services" class="position-relative z-index-1">
         <div class="wdContainer d-flex flex-column">
             <div class="stories mt-5">
-                <h1 class="mt-5 text-center fantasyfont">STORIES</h1>
+                <h1 class="mt-3 text-center fantasyfont">STORIES</h1>
                 <p class="text-center">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolores officiis dicta, iusto
                     eos eligendi! Tempora, voluptate animi laborum nihil, repellendus quasi ducimus molestias amet eaque
@@ -293,24 +336,22 @@
 
     <!-- About us Section -->
     <section id="about">
-        <div class="about wdContainer">
+        <div class="about wdContainer justify-content-center align-center">
             <div class="col-left">
                 <div class="about-img">
                     <img src="https://www.artmajeur.com/medias/hd/t/o/tony-rubino/artwork/16038424_grouch-mona-lisa-full-pic-copygrouch.jpg" alt="about-img">
                 </div>
             </div>
             <div class="col-right">
-                <h1 class="section-title">About us</h1>
-                <h2>Front End Developer</h2>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quam mollitia est enim ipsam sit
+                <h1 class="section-title fantasyfont">About us</h1>
+                <h2 class="fantasyfont">We are navigator</h2>
+                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quam mollitia est enim ipsam sit
                     numquam! Non repudiandae laudantium quae asperiores, amet quam nisi hic iusto recusandae facere
                     rerum nihil rem odio est aliquam sapiente ad, culpa, exercitationem alias quis! Culpa similique
                     doloribus repellat aliquam fugiat temporibus, in fuga quae inventore, perspiciatis ab est non
-                    corporis veniam exercitationem accusantium optio maxime ratione sit ipsa itaque, hic officiis.
-                    Blanditiis nemo incidunt repellendus inventore vitae neque quam, rem debitis quisquam earum
-                    molestias culpa facilis voluptates beatae suscipit voluptate exercitationem, fugit consectetur natus
-                    cum totam. Harum voluptates nostrum ducimus alias facere perspiciatis sunt.</p>
-                <a href="#" class="cta">Download Resume</a>
+                    corporis veniam exercitationem accusantium optio maxime ratione sit ipsa itaque, hic officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea vero aspernatur quas iure delectus. Exercitationem consequatur, corporis harum adipisci nostrum eveniet excepturi animi sunt amet explicabo dolor possimus pariatur dolores.Hello world.
+                </p>
+                <button id="btnStart" type="button" class="btn btn-outline-danger">More Info</button>
             </div>
         </div>
     </section>
