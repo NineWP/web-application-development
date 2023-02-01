@@ -90,6 +90,11 @@
             border-radius: 30px;
         }
 
+        .stories {
+            width: 80%;
+            align-self: center;
+        }
+
         .boxnum-1 {
             background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/003e1649-1298-4774-a5fe-0cbc297194f1/deoo4cp-db794b78-b1fe-49e6-922b-487222da9b95.jpg/v1/fill/w_1920,h_1080,q_75,strp/mountain_valley_by_somatonic_deoo4cp-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcLzAwM2UxNjQ5LTEyOTgtNDc3NC1hNWZlLTBjYmMyOTcxOTRmMVwvZGVvbzRjcC1kYjc5NGI3OC1iMWZlLTQ5ZTYtOTIyYi00ODcyMjJkYTliOTUuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.dzeSzaO1eSnHkatmx1BhINhUQu6CnOJTAXYpngknBdY);
         }
@@ -112,6 +117,9 @@
             margin-bottom: 20px;
         }
 
+        .story-box {
+            margin-top: 3rem;
+        }
 
         #service-box::after {
             content: '';
@@ -165,6 +173,10 @@
                 width: 60%;
             }
 
+            .story-box {
+                flex-direction: column;
+                margin-top: 1rem;
+            }
         }
 
     </style>
@@ -220,7 +232,7 @@
     <!-- Service section -->
     <section id="services" class="position-relative z-index-1">
         <div class="wdContainer d-flex flex-column">
-            <div class="d-flex flex-column mt-5 w-75">
+            <div class="stories mt-5">
                 <h1 class="mt-5 text-center fantasyfont">STORIES</h1>
                 <p class="text-center">
                     Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolores officiis dicta, iusto
@@ -229,7 +241,7 @@
                     laboriosam eos odio suscipit quasi libero, illo cupiditate officiis molestias?
                 </p>
             </div>
-            <div class="d-flex mt-5">
+            <div class="story-box d-flex ">
                 <div id="service-box" class="boxnum-1 m-3 p-3 d-flex position-relative flex-column">
                     <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/5360/5360824.png" /></div>
                     <h2 class="text-light fantasyfont">Beginning</h2>
