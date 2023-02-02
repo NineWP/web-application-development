@@ -141,12 +141,39 @@
             z-index: 1;
         }
 
+        .continent .continent-info {
+            width: 50%;
+            position: absolute;
+            color: white;
+            right: 2rem;
+            bottom: 2rem;
+        }
+
+        .continent-info {
+            text-align: center;
+        }
+
+        .continent-info::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            top: 0;
+            height: 100%;
+            width: 100%;
+            background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+            opacity: .6;
+            z-index: -1;
+            border-radius: 45px;
+        }
+
+
+
         /*about us section */
         #about .about {
             display: flex;
             flex-direction: row;
             text-align: center;
-            max-width: 1200px;
+            max-width: 90%;
             margin: 0 auto;
             padding: 100px 20px;
         }
@@ -205,7 +232,7 @@
 
 
         /* for tablet*/
-        @media only screen and (max-width:820px) {
+        @media only screen and (max-width:905px) {
 
             * {
                 font-size: 18px;
@@ -216,9 +243,20 @@
                 width: 60%;
             }
 
+            /*story*/
+            
             .story-box {
                 flex-direction: column;
                 margin-top: 1rem;
+            }
+
+            /*about*/
+            #about .about {
+                flex-direction: column;
+            }
+
+            #about .about .col-right {
+                text-align: center;
             }
         }
 
@@ -328,8 +366,13 @@
 
     <!-- Map section -->
     <section id="continent">
-        <div class="map wdContainer">
-
+        <div class="continent wdContainer d-flex position-relative">
+            <div class="continent-info ">
+                <h2 class="fantasyfont ">Continent Info</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga commodi deleniti totam vero optio corporis ducimus earum deserunt dolor rerum, provident laboriosam asperiores odit saepe necessitatibus! Laudantium, ipsa, perferendis consequatur quasi officia omnis tenetur facilis culpa error dolore et. Debitis id quo perspiciatis consequuntur repellendus, unde molestias cumque consectetur ipsa facilis sint dolores, illo tenetur perferendis voluptatibus! Porro mollitia, quo incidunt consequuntur neque laboriosam animi? Nam eveniet corrupti autem. 
+                </p>
+            </div>
         </div>
     </section>
     <!-- End of Map section -->
