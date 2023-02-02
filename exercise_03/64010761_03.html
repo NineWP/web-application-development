@@ -1,405 +1,472 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
   <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Bootstrap demo</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js" integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN" crossorigin="anonymous"></script>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-GLhlTQ8iRABdZLl6O3oVMWSktQOp6b7In1Zl3/Jr59b6EGGoI1aFkw7cmDA6j6gD"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
+      crossorigin="anonymous"
+    ></script>
 
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Dancing+Script:wght@700&family=Montserrat:wght@600&display=swap');
+      @import url("https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@1,300&family=Dancing+Script:wght@700&family=Montserrat:wght@600&display=swap");
 
+      * {
+        font-size: 24px;
+        font-family: "Cormorant Garamond", serif;
+        scroll-behavior: smooth;
+      }
+
+      .fantasyfont {
+        font-family: "Dancing Script", cursive;
+      }
+
+      .align-center {
+        align-items: center;
+      }
+
+      img {
+        height: 100%;
+        width: 100%;
+        object-fit: cover;
+      }
+
+      /*navbar css*/
+
+      .navbar-brand {
+        margin: 0 2rem;
+      }
+
+      .nav-item-spacer {
+        width: 4rem;
+      }
+
+      #navbarNavAltMarkup {
+        justify-content: space-around;
+      }
+
+      /* hero css*/
+      .wdContainer {
+        min-height: 100vh;
+        width: 100%;
+      }
+
+      #hero {
+        background-image: url(https://images.hdqwalls.com/wallpapers/my-empire-re.jpg);
+        background-size: cover;
+        background-position: top center;
+        position: relative;
+        z-index: 1;
+      }
+
+      #hero::after,
+      #continent::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-color: black;
+        opacity: 0.4;
+        z-index: -1;
+      }
+
+      .hero {
+        color: white;
+      }
+
+      .hero div {
+        width: 40%;
+        margin-left: 8rem;
+      }
+
+      /* Service section*/
+      #services #service-box {
+        background-size: cover;
+        overflow: hidden;
+        z-index: -1;
+        border-radius: 30px;
+      }
+
+      .stories {
+        width: 80%;
+        align-self: center;
+      }
+
+      .boxnum-1 {
+        background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/003e1649-1298-4774-a5fe-0cbc297194f1/deoo4cp-db794b78-b1fe-49e6-922b-487222da9b95.jpg/v1/fill/w_1920,h_1080,q_75,strp/mountain_valley_by_somatonic_deoo4cp-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcLzAwM2UxNjQ5LTEyOTgtNDc3NC1hNWZlLTBjYmMyOTcxOTRmMVwvZGVvbzRjcC1kYjc5NGI3OC1iMWZlLTQ5ZTYtOTIyYi00ODcyMjJkYTliOTUuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.dzeSzaO1eSnHkatmx1BhINhUQu6CnOJTAXYpngknBdY);
+      }
+
+      .boxnum-2 {
+        background-image: url(https://free4kwallpapers.com/uploads/originals/2022/09/16/mmorpg-inspired-landscape-wallpaper.jpg);
+      }
+
+      .boxnum-3 {
+        background-image: url(https://wallpaperset.com/w/full/4/9/b/487393.jpg);
+      }
+
+      .boxnum-4 {
+        background-image: url(https://images6.alphacoders.com/516/516511.jpg);
+      }
+
+      .icon {
+        height: 70px;
+        width: 70px;
+        margin-bottom: 20px;
+      }
+
+      .story-box {
+        margin-top: 1rem;
+      }
+
+      #service-box::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+        opacity: 0.6;
+        z-index: -1;
+      }
+
+      /* map section */
+      #continent {
+        background-image: url(https://wallpapercave.com/wp/wp10612832.jpg);
+        background-size: cover;
+        background-position: top center;
+        position: relative;
+        z-index: 1;
+      }
+
+      #continent .continent {
+        justify-content: center;
+      }
+
+      .continent .continent-info {
+        width: 50%;
+        position: relative;
+        align-self: center;
+        color: white;
+        text-align: center;
+        padding: 8px;
+      }
+
+      .continent-info::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
+        opacity: 0.6;
+        z-index: -1;
+        border-radius: 45px;
+      }
+
+      /*about us section */
+      #about .about {
+        display: flex;
+        flex-direction: row;
+        text-align: center;
+        max-width: 90%;
+        margin: 0 auto;
+        padding: 100px 20px;
+      }
+
+      #about .col-left {
+        width: 360px;
+        height: 480px;
+      }
+
+      #about .col-left .about-img {
+        height: 100%;
+        width: 100%;
+        position: relative;
+        border: 10px solid white;
+      }
+
+      #about .col-left .about-img::after {
+        content: "";
+        position: absolute;
+        left: -35px;
+        top: 34px;
+        height: 98%;
+        width: 98%;
+        border: 7px solid crimson;
+        z-index: -1;
+      }
+
+      #about .col-right {
+        width: 80%;
+        text-align: left;
+        padding: 30px;
+      }
+
+      #about .col-right h2 {
+        font-size: 1.8rem;
+        font-weight: 500;
+        letter-spacing: 0.2rem;
+        margin-bottom: 10px;
+      }
+
+      #about .col-right p {
+        margin-bottom: 20px;
+      }
+
+      #about .col-right a {
+        color: black;
+        margin-bottom: 50px;
+        transition: 0.3s ease;
+      }
+
+      @media only screen and (max-width: 1200px) {
         * {
-            font-size: 24px;
-            font-family: 'Cormorant Garamond', serif;
-            scroll-behavior: smooth;
-        }
-
-        .fantasyfont {
-            font-family: 'Dancing Script', cursive;
-        }
-
-        .align-center {
-            align-items: center;
-        }
-
-        img {
-            height: 100%;
-            width: 100%;
-            object-fit: cover;
-        }
-
-        /*navbar css*/
-
-        .navbar-brand {
-            margin: 0 2rem;
-        }
-
-       .nav-item-spacer {
-            width: 4rem;
-        }
-
-        #navbarNavAltMarkup {
-            justify-content: space-around;
-        }
-       
-        /* hero css*/
-        .wdContainer {
-            min-height: 100vh;
-            width: 100%;
-        }
-
-        
-        #hero {
-            background-image: url(https://images.hdqwalls.com/wallpapers/my-empire-re.jpg);
-            background-size: cover;
-            background-position: top center;
-            position: relative;
-            z-index: 1;
-        }
-
-        #hero::after, #continent::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            background-color: black;
-            opacity: .4;
-            z-index: -1;
-        }
-
-        .hero {
-            color: white;
+          font-size: 20px;
         }
 
         .hero div {
-            width: 40%;
-            margin-left: 8rem;
-        }
-        
-
-        /* Service section*/
-        #services #service-box {
-            background-size: cover;
-            overflow: hidden;
-            z-index: -1;
-            border-radius: 30px;
+          margin-left: 3rem;
+          width: 60%;
         }
 
-        .stories {
-            width: 80%;
-            align-self: center;
-        }
-
-        .boxnum-1 {
-            background-image: url(https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/003e1649-1298-4774-a5fe-0cbc297194f1/deoo4cp-db794b78-b1fe-49e6-922b-487222da9b95.jpg/v1/fill/w_1920,h_1080,q_75,strp/mountain_valley_by_somatonic_deoo4cp-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MTA4MCIsInBhdGgiOiJcL2ZcLzAwM2UxNjQ5LTEyOTgtNDc3NC1hNWZlLTBjYmMyOTcxOTRmMVwvZGVvbzRjcC1kYjc5NGI3OC1iMWZlLTQ5ZTYtOTIyYi00ODcyMjJkYTliOTUuanBnIiwid2lkdGgiOiI8PTE5MjAifV1dLCJhdWQiOlsidXJuOnNlcnZpY2U6aW1hZ2Uub3BlcmF0aW9ucyJdfQ.dzeSzaO1eSnHkatmx1BhINhUQu6CnOJTAXYpngknBdY);
-        }
-
-        .boxnum-2 {
-            background-image: url(https://free4kwallpapers.com/uploads/originals/2022/09/16/mmorpg-inspired-landscape-wallpaper.jpg);
-        }
-
-        .boxnum-3 {
-            background-image: url(https://wallpaperset.com/w/full/4/9/b/487393.jpg);
-        }
-
-        .boxnum-4 {
-            background-image: url(https://images6.alphacoders.com/516/516511.jpg);
-        }
-
-        .icon {
-            height: 70px;
-            width: 70px;
-            margin-bottom: 20px;
-        }
+        /*story*/
 
         .story-box {
-            margin-top: 1rem;
+          flex-direction: column;
+          margin-top: 1rem;
         }
 
-        #service-box::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-            opacity: .6;
-            z-index: -1;
-        }
-
-        /* map section */
-        #continent {
-            background-image: url(https://wallpapercave.com/wp/wp10612832.jpg);
-            background-size: cover;
-            background-position: top center;
-            position: relative;
-            z-index: 1;
-        }
-
-        .continent .continent-info {
-            width: 50%;
-            position: absolute;
-            color: white;
-            right: 2rem;
-            bottom: 2rem;
-        }
-
-        .continent-info {
-            text-align: center;
-        }
-
-        .continent-info::after {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            height: 100%;
-            width: 100%;
-            background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-            opacity: .6;
-            z-index: -1;
-            border-radius: 45px;
-        }
-
-
-
-        /*about us section */
+        /*about*/
         #about .about {
-            display: flex;
-            flex-direction: row;
-            text-align: center;
-            max-width: 90%;
-            margin: 0 auto;
-            padding: 100px 20px;
+          flex-direction: column;
         }
 
-        #about .col-left {
-            width: 360px;
-            height: 480px;
+        #about .about .col-right {
+          text-align: center;
         }
 
-        #about .col-left .about-img {
-            height: 100%;
-            width: 100%;
-            position: relative;
-            border: 10px solid white;
+        #about .about .col-left {
+          width: 240px;
+          height: 360px;
         }
-
-        #about .col-left .about-img::after {
-            content: '';
-            position: absolute;
-            left: -35px;
-            top: 34px;
-            height: 98%;
-            width: 98%;
-            border: 7px solid crimson;
-            z-index: -1;
-        }
-
-        #about .col-right {
-            width: 80%;
-            text-align: left;
-            padding: 30px;
-        }
-
-        #about .col-right h2 {
-            font-size: 1.8rem;
-            font-weight: 500;
-            letter-spacing: .2rem;
-            margin-bottom: 10px;
-        }
-
-        #about .col-right p {
-            margin-bottom: 20px;
-        }
-
-        #about .col-right a {
-            color: black;
-            margin-bottom: 50px;
-            transition: .3s ease;
-        }
-
-        #about .col-right a:hover {
-            color: white;
-            background-color: crimson;
-            transform: scale(1.1);
-        }
-
-
-        /* for tablet*/
-        @media only screen and (max-width:905px) {
-
-            * {
-                font-size: 18px;
-            }
-
-            .hero div {
-                margin-left: 3rem;
-                width: 60%;
-            }
-
-            /*story*/
-            
-            .story-box {
-                flex-direction: column;
-                margin-top: 1rem;
-            }
-
-            /*about*/
-            #about .about {
-                flex-direction: column;
-            }
-
-            #about .about .col-right {
-                text-align: center;
-            }
-        }
-
+      }
     </style>
   </head>
   <body>
-
     <!-- Header section -->
-    
+
     <section id="Header">
-        <nav class="navbar bg-dark navbar navbar-expand-lg bg-body-tertiary fixed-top" data-bs-theme="dark">
-            <div class="container-fluid">
-                <i class="fa-duotone fa-truck-fast"></i>
-                <a class="navbar-brand fs-4 fantasyfont p-0" href="#">Isekai Journey</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-                  <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                  <div class="navbar-nav">
-                    <a class="nav-link active" aria-current="page" href="#">Home</a>
-                    <div class="nav-item-spacer"></div>
-                    <a class="nav-link" href="#services">Stories</a>
-                    <div class="nav-item-spacer"></div>
-                    <a class="nav-link" href="#continent">Continent</a>
-                    <div class="nav-item-spacer"></div>
-                    <a class="nav-link" href="#about">About Us</a>
-                    <div class="nav-item-spacer"></div>
-                    <a class="nav-link" href="#">Contact</a>
-                  </div>
-                </div>
-              </div>
-          </nav>
+      <nav
+        class="navbar bg-dark navbar navbar-expand-lg bg-body-tertiary fixed-top"
+        data-bs-theme="dark"
+      >
+        <div class="container-fluid">
+          <i class="fa-duotone fa-truck-fast"></i>
+          <a class="navbar-brand fs-4 fantasyfont p-0" href="#"
+            >Isekai Journey</a
+          >
+          <button
+            class="navbar-toggler"
+            type="button"
+            data-bs-toggle="collapse"
+            data-bs-target="#navbarNavAltMarkup"
+            aria-controls="navbarNavAltMarkup"
+            aria-expanded="false"
+            aria-label="Toggle navigation"
+          >
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+            <div class="navbar-nav">
+              <a class="nav-link active" aria-current="page" href="#">Home</a>
+              <div class="nav-item-spacer"></div>
+              <a class="nav-link" href="#services">Stories</a>
+              <div class="nav-item-spacer"></div>
+              <a class="nav-link" href="#continent">Continent</a>
+              <div class="nav-item-spacer"></div>
+              <a class="nav-link" href="#about">About Us</a>
+            </div>
+          </div>
+        </div>
+      </nav>
     </section>
-    
 
     <!-- End of Header section -->
 
     <!-- hero section -->
     <section id="hero">
-        <div class="hero wdContainer d-flex align-center">
-            <div>
-                <h1 class="fantasyfont">Hello,</h1>
-                <h1 class="fantasyfont">Welcome to another world!! </h1>
-                <p>
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem deserunt, nulla dolor eius nostrum beatae itaque quos exercitationem, odio mollitia nihil optio soluta, officiis incidunt cumque amet. Ea, minus dolor!
-                </p>
-                <button id="btnStart" type="button" class="btn btn-outline-light">Start Your Journey</button>
-            </div>
-            
+      <div class="hero wdContainer d-flex align-center">
+        <div>
+          <h1 class="fantasyfont">Hello,</h1>
+          <h1 class="fantasyfont">Welcome to another world!!</h1>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Autem
+            deserunt, nulla dolor eius nostrum beatae itaque quos
+            exercitationem, odio mollitia nihil optio soluta, officiis incidunt
+            cumque amet. Ea, minus dolor!
+          </p>
+          <button id="btnStart" type="button" class="btn btn-outline-light">
+            Start Your Journey
+          </button>
         </div>
+      </div>
     </section>
     <!-- End of hero section -->
 
     <!-- Service section -->
     <section id="services" class="position-relative z-index-1">
-        <div class="wdContainer d-flex flex-column">
-            <div class="stories mt-5">
-                <h1 class="mt-3 text-center fantasyfont">STORIES</h1>
-                <p class="text-center">
-                    Lorem, ipsum dolor sit amet consectetur adipisicing elit. Perferendis dolores officiis dicta, iusto
-                    eos eligendi! Tempora, voluptate animi laborum nihil, repellendus quasi ducimus molestias amet eaque
-                    ex, ratione rerum fugiat enim error voluptatem commodi esse aliquam cum voluptatum! Dolorem in
-                    laboriosam eos odio suscipit quasi libero, illo cupiditate officiis molestias?
-                </p>
-            </div>
-            <div class="story-box d-flex ">
-                <div id="service-box" class="boxnum-1 m-3 p-3 d-flex position-relative flex-column">
-                    <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/5360/5360824.png" /></div>
-                    <h2 class="text-light fantasyfont">Beginning</h2>
-                    <p class="text-light">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil neque a, labore at inventore sed
-                        natus error nemo vero veritatis voluptas voluptatum enim delectus obcaecati rerum impedit
-                        nesciunt temporibus
-                    </p>
-                </div>
-                <div id="service-box" class="boxnum-2 m-3 p-3 d-flex position-relative flex-column">
-                    <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/1610/1610544.png" /></div>
-                    <h2 class="text-light fantasyfont">Growing</h2>
-                    <p class="text-light">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil neque a, labore at inventore sed
-                        natus error nemo vero veritatis voluptas voluptatum enim delectus obcaecati rerum impedit
-                        nesciunt temporibus
-                    </p>
-                </div>
-                <div id="service-box" class="boxnum-3 m-3 p-3 d-flex position-relative flex-column">
-                    <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/3943/3943741.png" /></div>
-                    <h2 class="text-light fantasyfont">Explore</h2>
-                    <p class="text-light">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil neque a, labore at inventore sed
-                        natus error nemo vero veritatis voluptas voluptatum enim delectus obcaecati rerum impedit
-                        nesciunt temporibus
-                    </p>
-                </div>
-                <div id="service-box" class="boxnum-4 m-3 p-3 d-flex position-relative flex-column">
-                    <div class="icon"><img src="https://cdn-icons-png.flaticon.com/512/297/297806.png" /></div>
-                    <h2 class="text-light fantasyfont">Challenge</h2>
-                    <p class="text-light">
-                        Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil neque a, labore at inventore sed
-                        natus error nemo vero veritatis voluptas voluptatum enim delectus obcaecati rerum impedit
-                        nesciunt temporibus
-                    </p>
-                </div>
-            </div>
+      <div class="wdContainer d-flex flex-column">
+        <div class="stories mt-5">
+          <h1 class="mt-3 text-center fantasyfont">STORIES</h1>
+          <p class="text-center">
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit.
+            Perferendis dolores officiis dicta, iusto eos eligendi! Tempora,
+            voluptate animi laborum nihil, repellendus quasi ducimus molestias
+            amet eaque ex, ratione rerum fugiat enim error voluptatem commodi
+            esse aliquam cum voluptatum! Dolorem in laboriosam eos odio suscipit
+            quasi libero, illo cupiditate officiis molestias?
+          </p>
         </div>
+        <div class="story-box d-flex">
+          <div
+            id="service-box"
+            class="boxnum-1 m-3 p-3 d-flex position-relative flex-column"
+          >
+            <div class="icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/5360/5360824.png"
+              />
+            </div>
+            <h2 class="text-light fantasyfont">Beginning</h2>
+            <p class="text-light">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+              neque a, labore at inventore sed natus error nemo vero veritatis
+              voluptas voluptatum enim delectus obcaecati rerum impedit nesciunt
+              temporibus
+            </p>
+          </div>
+          <div
+            id="service-box"
+            class="boxnum-2 m-3 p-3 d-flex position-relative flex-column"
+          >
+            <div class="icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/1610/1610544.png"
+              />
+            </div>
+            <h2 class="text-light fantasyfont">Growing</h2>
+            <p class="text-light">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+              neque a, labore at inventore sed natus error nemo vero veritatis
+              voluptas voluptatum enim delectus obcaecati rerum impedit nesciunt
+              temporibus
+            </p>
+          </div>
+          <div
+            id="service-box"
+            class="boxnum-3 m-3 p-3 d-flex position-relative flex-column"
+          >
+            <div class="icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/3943/3943741.png"
+              />
+            </div>
+            <h2 class="text-light fantasyfont">Explore</h2>
+            <p class="text-light">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+              neque a, labore at inventore sed natus error nemo vero veritatis
+              voluptas voluptatum enim delectus obcaecati rerum impedit nesciunt
+              temporibus
+            </p>
+          </div>
+          <div
+            id="service-box"
+            class="boxnum-4 m-3 p-3 d-flex position-relative flex-column"
+          >
+            <div class="icon">
+              <img
+                src="https://cdn-icons-png.flaticon.com/512/297/297806.png"
+              />
+            </div>
+            <h2 class="text-light fantasyfont">Challenge</h2>
+            <p class="text-light">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Nihil
+              neque a, labore at inventore sed natus error nemo vero veritatis
+              voluptas voluptatum enim delectus obcaecati rerum impedit nesciunt
+              temporibus
+            </p>
+          </div>
+        </div>
+      </div>
     </section>
     <!-- End of Service section -->
 
     <!-- Map section -->
     <section id="continent">
-        <div class="continent wdContainer d-flex position-relative">
-            <div class="continent-info ">
-                <h2 class="fantasyfont ">Continent Info</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga commodi deleniti totam vero optio corporis ducimus earum deserunt dolor rerum, provident laboriosam asperiores odit saepe necessitatibus! Laudantium, ipsa, perferendis consequatur quasi officia omnis tenetur facilis culpa error dolore et. Debitis id quo perspiciatis consequuntur repellendus, unde molestias cumque consectetur ipsa facilis sint dolores, illo tenetur perferendis voluptatibus! Porro mollitia, quo incidunt consequuntur neque laboriosam animi? Nam eveniet corrupti autem. 
-                </p>
-            </div>
+      <div class="continent wdContainer d-flex position-relative">
+        <div class="continent-info">
+          <h2 class="fantasyfont">Continent Info</h2>
+          <p>
+            Lorem ipsum dolor sit amet, consectetur adipisicing elit. Fuga
+            commodi deleniti totam vero optio corporis ducimus earum deserunt
+            dolor rerum, provident laboriosam asperiores odit saepe
+            necessitatibus! Laudantium, ipsa, perferendis consequatur quasi
+            officia omnis tenetur facilis culpa error dolore et. Debitis id quo
+            perspiciatis consequuntur repellendus, unde molestias cumque
+            consectetur ipsa facilis sint dolores, illo tenetur perferendis
+            voluptatibus! Porro mollitia, quo incidunt consequuntur neque
+            laboriosam animi? Nam eveniet corrupti autem.
+          </p>
         </div>
+      </div>
     </section>
     <!-- End of Map section -->
 
     <!-- About us Section -->
     <section id="about">
-        <div class="about wdContainer justify-content-center align-center">
-            <div class="col-left">
-                <div class="about-img">
-                    <img src="https://www.artmajeur.com/medias/hd/t/o/tony-rubino/artwork/16038424_grouch-mona-lisa-full-pic-copygrouch.jpg" alt="about-img">
-                </div>
-            </div>
-            <div class="col-right">
-                <h1 class="section-title fantasyfont">About us</h1>
-                <h2 class="fantasyfont">We are navigator</h2>
-                <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quam mollitia est enim ipsam sit
-                    numquam! Non repudiandae laudantium quae asperiores, amet quam nisi hic iusto recusandae facere
-                    rerum nihil rem odio est aliquam sapiente ad, culpa, exercitationem alias quis! Culpa similique
-                    doloribus repellat aliquam fugiat temporibus, in fuga quae inventore, perspiciatis ab est non
-                    corporis veniam exercitationem accusantium optio maxime ratione sit ipsa itaque, hic officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea vero aspernatur quas iure delectus. Exercitationem consequatur, corporis harum adipisci nostrum eveniet excepturi animi sunt amet explicabo dolor possimus pariatur dolores.Hello world.
-                </p>
-                <button id="btnStart" type="button" class="btn btn-outline-danger">More Info</button>
-            </div>
+      <div class="about wdContainer justify-content-center align-center">
+        <div class="col-left">
+          <div class="about-img">
+            <img
+              src="https://www.artmajeur.com/medias/hd/t/o/tony-rubino/artwork/16038424_grouch-mona-lisa-full-pic-copygrouch.jpg"
+              alt="about-img"
+            />
+          </div>
         </div>
+        <div class="col-right">
+          <h1 class="section-title fantasyfont">About us</h1>
+          <h2 class="fantasyfont">We are navigator</h2>
+          <p>
+            Lorem ipsum, dolor sit amet consectetur adipisicing elit. Dolor quam
+            mollitia est enim ipsam sit numquam! Non repudiandae laudantium quae
+            asperiores, amet quam nisi hic iusto recusandae facere rerum nihil
+            rem odio est aliquam sapiente ad, culpa, exercitationem alias quis!
+            Culpa similique doloribus repellat aliquam fugiat temporibus, in
+            fuga quae inventore, perspiciatis ab est non corporis veniam
+            exercitationem accusantium optio maxime ratione sit ipsa itaque, hic
+            officiis. Lorem ipsum dolor sit amet consectetur adipisicing elit.
+            Ea vero aspernatur quas iure delectus. Exercitationem consequatur,
+            corporis harum adipisci nostrum eveniet excepturi animi sunt amet
+            explicabo dolor possimus pariatur dolores.Hello world.
+          </p>
+          <button id="btnStart" type="button" class="btn btn-outline-danger">
+            More Info
+          </button>
+        </div>
+      </div>
     </section>
     <!-- End of About us Section -->
-
-
   </body>
 </html>
