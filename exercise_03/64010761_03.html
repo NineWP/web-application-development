@@ -169,17 +169,11 @@
 
     /* Monsters */
     #monsters .monsters {
-      width: 100%;
-      height: 130vh;
       background-image: url(https://wallpapercave.com/wp/wp10440483.jpg);
       background-size: cover;
       background-position: top center;
       position: relative;
       z-index: 1;
-    }
-
-    .monster-card {
-      display: flex;
     }
 
     .monsters::after{
@@ -190,7 +184,7 @@
       height: 100%;
       width: 100%;
       background-image: linear-gradient(60deg, #29323c 0%, #485563 100%);
-      opacity: 0.3;
+      opacity: 0.8;
       z-index: -1;
     }
 
@@ -263,6 +257,19 @@
       transition: 0.3s ease;
     }
 
+    /* contact */
+    #contact .contact-item {
+      width: 90%;
+      padding: 20px;
+      text-align: center;
+      border-radius: 20px;
+      display: flex;
+      box-shadow: 0 0 10px 0 #0000002c;
+      flex-direction: column;
+      transition: .3s ease box-shadow;
+      margin: 10px;
+    }
+
     @media only screen and (max-width: 1200px) {
       * {
         font-size: 20px;
@@ -279,20 +286,7 @@
         flex-direction: column;
         margin-top: 1rem;
       }
-
-      /*monsters*/
-      .monster-card {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        grid-row: auto auto;
-        grid-column-gap: 20px;
-        grid-row-gap: 20px;
-        justify-items: center;
-      }
-
-      .monsters {
-        height: 160vh;
-      }
+  
 
       /*about*/
       #about .about {
@@ -317,32 +311,9 @@
       .monsters {
         height: 270vh;
       }
-    }
 
-    @media only screen and (max-width: 1200px) and (max-height: 1200px) {
-      .monster-card {
-        grid-template-columns: repeat(2, 1fr);
-      }
-
-      .monsters {
-        height: 110vh;
-      }
-    }
-
-    @media only screen and (max-width: 890px) and (max-height: 1180px) {
-      .monster-card {
-        grid-template-columns: repeat(1, 1fr);
-      }
-
-      .monsters {
-        height: 190vh;
-      }
-    }
-
-    @media only screen and (max-width: 390px) {
-
-      .monsters {
-        height: 390vh;
+      #contact .all-contact-items {
+        flex-direction: column;
       }
     }
   </style>
@@ -373,6 +344,8 @@
             <a class="nav-link" href="#carouselExampleCaptions">Kingdoms</a>
             <div class="nav-item-spacer"></div>
             <a class="nav-link" href="#about">About Us</a>
+            <div class="nav-item-spacer"></div>
+            <a class="nav-link" href="#contact">Contact</a>
           </div>
         </div>
       </div>
@@ -492,8 +465,8 @@
 
   <!-- Monsters section -->
   <section id="monsters">
-    <div class="monsters">
-      <div class="monster-header text-white pt-3">
+    <div class="monsters container-fluid vh-100">
+      <div class="monster-header text-white pt-3 d-flex flex-column">
         <h1 class="text-center fantasyfont pt-5">MONSTERS</h1>
         <p class="text-center" style="padding: 0 5rem;">
           Lorem, ipsum dolor sit amet consectetur adipisicing elit.
@@ -501,42 +474,9 @@
           voluptate animi laborum nihil, repellendus quasi ducimus molestias
           amet eaque ex, ratione rerum fugiat enim error voluptatem commodi
           esse aliquam cum voluptatum! Dolorem in laboriosam eos odio suscipit
-          quasi libero, illo cupiditate officiis molestias?
+          quasi libero, illo cupiditate officiis molestias? Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae animi repudiandae quisquam et mollitia consequatur deleniti provident non aspernatur ipsa aliquam consequuntur autem fugiat, tempore, quas dolorem iste saepe, blanditiis voluptate est? Voluptas iusto et eligendi enim minus reiciendis animi, sequi doloremque similique alias obcaecati ratione cumque voluptates saepe ipsum perspiciatis nisi, nostrum ducimus ipsam! Nisi iure vero 
         </p>
-      </div>
-      <div class="monster-card align-self-center" style="height: 60vh;">
-        <div class="card m-3" style="width: 18rem; min-height: 20rem;">
-          <img class="card-img-top overflow-hidden" style="object-position: 50% 20%;" src="https://i.pinimg.com/originals/49/09/f9/4909f9e82c492b1e4d52c2bcd9daaf97.jpg" alt="Card image cap">
-          <div class="card-body bg-">
-            <h5 class="card-title">Ground Monsters</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ipsa possimus expedita suscipit.</p>
-            <a href="#" class="btn btn-success">More Info</a>
-          </div>
-        </div>
-        <div class="card m-3 " style="width: 18rem; min-height: 20rem;">
-          <img class="card-img-top overflow-hidden" src="https://w0.peakpx.com/wallpaper/109/422/HD-wallpaper-mythical-beast-fire-fantasy-phoenix-beast-mythical.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Fly Monsters</h5>
-            <p class="card-text">Lorem ipsum, dolor sit amet consectetur adipisicing elit. Adipisci fugiat nemo et?</p>
-            <a href="#" class="btn btn-warning">More Info</a>
-          </div>
-        </div>
-        <div class="card m-3" style="width: 18rem; min-height: 20rem;">
-          <img class="card-img-top overflow-hidden" style="object-position: 50% 20%;" src="https://w0.peakpx.com/wallpaper/87/621/HD-wallpaper-subnautica-iphone-sea-monster-art-subnautica-creatures-subnautica-concept-art-deep-sea-monster-thumbnail.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Water Monsters</h5>
-            <p class="card-text">Lorem ipsum dolor sit, amet consectetur adipisicing elit. Debitis qui culpa sed aut?</p>
-            <a href="#" class="btn btn-info">More Info</a>
-          </div>
-        </div>
-        <div class="card m-3" style="width: 18rem; min-height: 20rem;">
-          <img class="card-img-top overflow-hidden" src="https://wallpaperaccess.com/full/1867695.jpg" alt="Card image cap">
-          <div class="card-body">
-            <h5 class="card-title">Elder Monsters</h5>
-            <p class="card-text">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Optio blanditiis molestias quas?</p>
-            <a href="#" class="btn btn-dark">More Info</a>
-          </div>
-        </div>
+        <button type="button" class="btn btn-dark m-auto">More info</button>
       </div>
     </div>
   </section>
@@ -616,6 +556,48 @@
     </div>
   </section>
   <!-- End of About us Section -->
+
+  <!-- Contact section -->
+    <section id="contact" class="mb-5">
+        <div class="contact wdcontainer">
+            <div class="text-center">
+                <h1 class="section-title fantasyfont">Contact info</h1>
+            </div>
+            <div class="all-contact-items d-flex align-items-center justify-content-center w-75 m-auto">
+                <div class="contact-item">
+                    <div class="icon">
+                        <img src="https://img.icons8.com/bubbles/50/000000/phone--v1.png"/>
+                    </div>
+                    <div class="contact-info">
+                        <h1>Phone</h1>
+                        <h2>+1 234 5678</h2>
+                        <h2>+1 234 5678</h2>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">
+                        <img src="https://img.icons8.com/bubbles/50/000000/apple-mail.png"/>
+                    </div>
+                    <div class="contact-info">
+                        <h1>Email</h1>
+                        <h2>hello@gmail.com</h2>
+                        <h2>ggez@gmail.com</h2>
+                    </div>
+                </div>
+                <div class="contact-item">
+                    <div class="icon">
+                        <img src="https://img.icons8.com/color/48/000000/marker--v1.png"/>
+                    </div>
+                    <div class="contact-info">
+                        <h1>Address</h1>
+                        <h2>moon</h2>
+                        <h2>sun</h2>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- End of Contact section -->
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"
     integrity="sha384-w76AqPfDkMBDXo30jS1Sgez6pr3x5MlQ1ZAGC+nuZB+EYdgRZgiwxhTBTkF7CXvN"
