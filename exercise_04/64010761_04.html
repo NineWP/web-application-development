@@ -14,10 +14,33 @@
 
             // Display Time Button
             const timeButton = document.createElement("button");
-            timeButton.setAttribute('style', 'margin: 0 0 22px 0')
+            timeButton.setAttribute('id', 'dateTime');
+            timeButton.setAttribute('style', 'margin: 0 0 22px 0; cursor: pointer;');
+            timeButton.setAttribute('onclick', 'startWebWoker()');
             const buttonText = document.createTextNode("Click me to display Date and Time");
             timeButton.appendChild(buttonText);
             maincontainer.appendChild(timeButton)
+            // function startWebWorker
+            let status = false;
+            const startWebWoker = () => {
+                const dateButton = document.getElementById('dateTime');
+                if (!status) {
+                    worker = new Worker('./64010761_worker.js');
+                    worker.onmessage = (event) => {   
+                        dateButton.style.position = "fixed";
+                        dateButton.style.top = 0;
+                        dateButton.style.right = 0;
+                        dateButton.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                        dateButton.style.color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                        dateButton.innerText = event.data;
+                        status = true;
+                    }
+                } else {
+                    status = false;
+                    worker.terminate();
+                    dateButton.style.position = null;
+                }
+            }
 
             // Personal Info of Mr. Worrapon
             const personalInfoContainer = document.createElement("div");
@@ -54,6 +77,7 @@
             maincontainer.appendChild(snapshotContainer);
             // Display Imanges
             const snapshotImage = document.createElement("img");
+            snapshotImage.setAttribute('style', 'width: 800px;')
             snapshotImage.setAttribute('src', "https://www.ce.kmitl.ac.th/api/main/banner/download/1");
             maincontainer.appendChild(snapshotImage);
 
