@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head></head>
+    <body>
+        <div id="maincontainer"></div>
+        <script>
+            const maincontainer = document.getElementById("maincontainer");
+
+            // Header Exercise 04: JavaScript&DOM
+            const header = document.createElement("h2");
+            const headerText = document.createTextNode("Exercise 04: JavaScript&DOM");
+            header.appendChild(headerText);
+            maincontainer.appendChild(header);
+
+            // Display Time Button
+            const timeButton = document.createElement("button");
+            timeButton.setAttribute('style', 'margin: 0 0 22px 0')
+            const buttonText = document.createTextNode("Click me to display Date and Time");
+            timeButton.appendChild(buttonText);
+            maincontainer.appendChild(timeButton)
+
+            // Personal Info of Mr. Worrapon
+            const personalInfoContainer = document.createElement("div");
+            personalInfoContainer.setAttribute('id', 'personalInfoContainer');
+            const personInfo = document.createElement("a");
+            const personInfoText = document.createTextNode("Personal Info");
+            personInfo.setAttribute('style', 'color: #f4b5f4; cursor: pointer; text-decoration: underline;');
+            personInfo.appendChild(personInfoText);
+            personalInfoContainer.appendChild(personInfo);
+            maincontainer.appendChild(personalInfoContainer);
+
+            // Snapshots Container and Header
+            const snapshotContainer = document.createElement("div");
+            snapshotContainer.setAttribute('id', 'snapshotContainer');
+            const snapshotHeader = document.createElement("h1");
+            const snapshotHeaderText = document.createTextNode("Snapshots");
+            snapshotHeader.appendChild(snapshotHeaderText);
+            snapshotContainer.appendChild(snapshotHeader);
+            // List of Snapshots
+            const snapshotList = document.createElement('ul');
+            snapshotList.setAttribute('id', 'snapshotsList');
+            const snapshotListText = ["Fireworks", "Crest", "Action", "Buffalo"];
+
+            snapshotListText.forEach((item) => {
+                const li = document.createElement('li');
+                const a = document.createElement('a');
+                a.setAttribute('style', 'color: blue; cursor: pointer; text-decoration: underline;');
+                a.textContent = item;
+                li.appendChild(a);
+                snapshotList.appendChild(li);
+            });
+
+            snapshotContainer.appendChild(snapshotList);
+            maincontainer.appendChild(snapshotContainer);
+            // Display Imanges
+            const snapshotImage = document.createElement("img");
+            snapshotImage.setAttribute('src', "https://www.ce.kmitl.ac.th/api/main/banner/download/1");
+            maincontainer.appendChild(snapshotImage);
+
+
+        </script>
+    </body>
+</html>
