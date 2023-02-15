@@ -4,13 +4,16 @@
     <body>
         <div id="maincontainer"></div>
         <script>
+            const images = ["https://wallpaperaccess.com/full/401679.jpg", "https://cdn2.vectorstock.com/i/1000x1000/39/36/premium-quality-product-golden-label-design-vector-20013936.jpg", "https://static01.nyt.com/images/2016/04/17/sports/17-DOG-SCORE1/17-DOG-SCORE1-videoSixteenByNineJumbo1600.jpg", "https://cdn.britannica.com/63/145563-050-5E0EC254/water-buffalo.jpg"];
             const maincontainer = document.getElementById("maincontainer");
+            
 
             // Header Exercise 04: JavaScript&DOM
             const header = document.createElement("h2");
             const headerText = document.createTextNode("Exercise 04: JavaScript&DOM");
             header.appendChild(headerText);
             maincontainer.appendChild(header);
+
 
             // Display Time Button
             const timeButton = document.createElement("button");
@@ -42,15 +45,44 @@
                 }
             }
 
+
             // Personal Info of Mr. Worrapon
             const personalInfoContainer = document.createElement("div");
             personalInfoContainer.setAttribute('id', 'personalInfoContainer');
             const personInfo = document.createElement("a");
             const personInfoText = document.createTextNode("Personal Info");
             personInfo.setAttribute('style', 'color: #f4b5f4; cursor: pointer; text-decoration: underline;');
+            // hover to change color
+            personInfo.addEventListener('mouseover', () => {
+                personInfo.style.backgroundColor = 'yellow';
+                personInfo.style.color = 'blue';
+            });
+            personInfo.addEventListener('mouseleave', () => {
+                personInfo.style.background = '';
+                personInfo.style.color = '#f4b5f4';
+            });
+            personInfo.setAttribute('onclick', 'showInfo()');
             personInfo.appendChild(personInfoText);
             personalInfoContainer.appendChild(personInfo);
             maincontainer.appendChild(personalInfoContainer);
+            //function showInfo
+            let show = false;
+            const showInfo = () => {
+                let allInfo = `<ul id="allInfo">
+                                    <li>Worrapon Rangsee, ID: 64010761</li>
+                                    <li>Subject: Web Application Development</li>
+                                    <li>Semester: 2</li>
+                                </ul>`;
+                if(!show) {
+                    personalInfoContainer.insertAdjacentHTML("afterend", allInfo);
+                    show = true;
+                } else {
+                    let rmElement = document.getElementById("allInfo");
+                    rmElement.remove();
+                    show = false;
+                }
+            }
+
 
             // Snapshots Container and Header
             const snapshotContainer = document.createElement("div");
@@ -63,23 +95,33 @@
             const snapshotList = document.createElement('ul');
             snapshotList.setAttribute('id', 'snapshotsList');
             const snapshotListText = ["Fireworks", "Crest", "Action", "Buffalo"];
-
-            snapshotListText.forEach((item) => {
+            // create "li a" using forloop and add images
+            for (let i = 0; i < snapshotListText.length; i++) {
                 const li = document.createElement('li');
                 const a = document.createElement('a');
                 a.setAttribute('style', 'color: blue; cursor: pointer; text-decoration: underline;');
-                a.textContent = item;
+                a.setAttribute('href', images[i]);
+                a.textContent = snapshotListText[i];
                 li.appendChild(a);
                 snapshotList.appendChild(li);
-            });
-
+            }
             snapshotContainer.appendChild(snapshotList);
             maincontainer.appendChild(snapshotContainer);
             // Display Imanges
             const snapshotImage = document.createElement("img");
+            snapshotImage.setAttribute('id', 'displayImage');
             snapshotImage.setAttribute('style', 'width: 800px;')
             snapshotImage.setAttribute('src', "https://www.ce.kmitl.ac.th/api/main/banner/download/1");
-            maincontainer.appendChild(snapshotImage);
+            maincontainer.appendChild(snapshotImage);   
+            // Change image on click
+            const listOfSnapshot = document.querySelectorAll("#snapshotsList li a");
+            listOfSnapshot.forEach((item) => {
+                item.addEventListener('click', () => {
+                    event.preventDefault(); // prevent default link behavior
+                    const snapshotSrc = event.target.href;
+                    snapshotImage.setAttribute('src', snapshotSrc);
+                });
+            });
 
 
         </script>
