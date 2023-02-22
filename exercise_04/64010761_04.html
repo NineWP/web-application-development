@@ -6,14 +6,13 @@
         <script>
             const images = ["https://wallpaperaccess.com/full/401679.jpg", "https://cdn2.vectorstock.com/i/1000x1000/39/36/premium-quality-product-golden-label-design-vector-20013936.jpg", "https://static01.nyt.com/images/2016/04/17/sports/17-DOG-SCORE1/17-DOG-SCORE1-videoSixteenByNineJumbo1600.jpg", "https://cdn.britannica.com/63/145563-050-5E0EC254/water-buffalo.jpg"];
             const maincontainer = document.getElementById("maincontainer");
-            
+            const colors = ['#FF4136', '#0074D9', '#3D9970', '#FF851B', '#B10DC9', '#2ECC40'];
 
             // Header Exercise 04: JavaScript&DOM
             const header = document.createElement("h2");
             const headerText = document.createTextNode("Exercise 04: JavaScript&DOM");
             header.appendChild(headerText);
             maincontainer.appendChild(header);
-
 
             // Display Time Button
             const timeButton = document.createElement("button");
@@ -25,6 +24,8 @@
             maincontainer.appendChild(timeButton)
             // function startWebWorker
             let status = false;
+            let currentbackground = 5;
+            let currentText = 0;
             const startWebWoker = () => {
                 const dateButton = document.getElementById('dateTime');
                 if (!status) {
@@ -33,8 +34,14 @@
                         dateButton.style.position = "fixed";
                         dateButton.style.top = 0;
                         dateButton.style.right = 0;
-                        dateButton.style.backgroundColor = '#' + Math.floor(Math.random() * 16777215).toString(16);
-                        dateButton.style.color = '#' + Math.floor(Math.random() * 16777215).toString(16);
+                        dateButton.style.backgroundColor = colors[currentbackground];
+                        currentbackground--;
+                        dateButton.style.color = colors[currentText];
+                        currentText++;
+                        if(currentText > 5){
+                            currentbackground = 5;
+                            currentText = 0
+                        }
                         dateButton.innerText = event.data;
                         status = true;
                     }
