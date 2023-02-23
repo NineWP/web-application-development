@@ -1,8 +1,30 @@
-import React from 'react';
+import React, { useEffect, useState } from 'react';
 import { MenuData } from './MenuData';
 import '../styles/MenuCard.css'
+import VoteBtn from './VoteBtn';
 
 const MenuCard = () => {
+    const [score, setScore] = useState(0);
+    const [scoreText, setScoreText] = useState("MIN");
+    const updateCardScores = (gain) => {
+      if (score + gain > 10) {
+        alert("Cannot vote more!");
+      } else if (score + gain < 0) {
+        alert("Cannot unvote!");
+      } else {
+        setScore(score + gain);
+      }
+    };
+    useEffect(() => {
+      if (score === 10) {
+        setScoreText("MAX");
+      } else if (score === 0) {
+        setScoreText("MIN");
+      } else {
+        setScoreText(`${score}`);
+      }
+    }, [score]);
+
   return (
     <div className="card-container">
         {MenuData.map((item, index) => {
@@ -16,11 +38,7 @@ const MenuCard = () => {
                         </div>
                         <img className="menu-img" src={item.img_src} alt={item.alt}/>
                     </div>
-                    <footer>
-                        <button className='vote'>Click to Vote</button>
-                        <span className='display-count'>MIN</span>
-                        <button className='unvote'>Click to Unvote</button>
-                    </footer>
+                    <VoteBtn childCallBack={updateCardScores} scoreText={scoreText}/>
                 </div>
             )
         })}
