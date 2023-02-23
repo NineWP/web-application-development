@@ -8,11 +8,19 @@
 .card {
     background-color: #fcecd6;
     display: flex;
-    justify-content: space-between;
+    flex-direction: column;
     border: solid 2px #474038;
     border-radius: 20px;
     padding: 20px;
     width: 50%;
+}
+
+.info h3, .info h4 {
+    margin: 10px auto;
+}
+
+.main-content {
+    display: flex;
 }
 
 .menu-img {
@@ -20,4 +28,25 @@
     width: 150px;
     height: 150px;
     margin: 0 0 0 10px;
+}
+
+button {
+    margin: auto 10px;
+    padding: 6px;
+}
+
+.display-count {
+    background-color: #75e300;
+    color: #8c3ed8;
+    padding: 5px 10px;
+    border: 1.5px solid #59643b;
+    border-radius: 8px;
+    font-weight: 700;
+    font-size: 24px;
+}
+
+footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
