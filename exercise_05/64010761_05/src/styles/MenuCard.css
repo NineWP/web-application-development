@@ -1,0 +1,23 @@
+.card-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.card {
+    background-color: #fcecd6;
+    display: flex;
+    justify-content: space-between;
+    border: solid 2px #474038;
+    border-radius: 20px;
+    padding: 20px;
+    width: 50%;
+}
+
+.menu-img {
+    display: inline-block;
+    width: 150px;
+    height: 150px;
+    margin: 0 0 0 10px;
+}
